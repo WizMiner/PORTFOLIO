@@ -20,6 +20,24 @@ const blogData = [
       "CSS Grid is a powerful layout tool that makes designing web pages easier and more flexible.",
     image: "https://via.placeholder.com/350x200",
     link: "#",
+  },{
+    title: "Understanding CSS Grid",
+    description:
+      "CSS Grid is a powerful layout tool that makes designing web pages easier and more flexible.",
+    image: "https://via.placeholder.com/350x200",
+    link: "#",
+  },{
+    title: "Understanding CSS Grid",
+    description:
+      "CSS Grid is a powerful layout tool that makes designing web pages easier and more flexible.",
+    image: "https://via.placeholder.com/350x200",
+    link: "#",
+  },{
+    title: "Understanding CSS Grid",
+    description:
+      "CSS Grid is a powerful layout tool that makes designing web pages easier and more flexible.",
+    image: "https://via.placeholder.com/350x200",
+    link: "#",
   },
   // Add more blog data as needed
 ];
