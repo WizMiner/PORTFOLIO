@@ -1,0 +1,83 @@
+/* FAQ Section */
+.faqs {
+  padding: 4rem 1rem;
+  background-color: #f8f8f8;
+  text-align: center;
+}
+
+.faqs h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.faqs_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.faq {
+  flex: 0 1 calc(50% - 1rem);
+  margin-bottom: 1rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.faq:hover {
+  background-color: #f0f0f0;
+}
+
+.question_answer {
+  padding: 1.5rem;
+}
+
+.question_answer h4 {
+  font-size: 1.25rem;
+  color: #222;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.question_answer h4:hover {
+  color: #007bff;
+}
+
+.toggle_icon {
+  font-size: 1.5rem;
+  color: #007bff;
+  transition: transform 0.3s ease;
+}
+
+.question_answer p {
+  font-size: 1rem;
+  color: #555;
+  display: none;
+  margin-top: 0.8rem;
+  line-height: 1.6;
+}
+
+/* Active FAQ - Display Answer */
+.faq.active .question_answer p {
+  display: block;
+}
+
+.faq.active .toggle_icon {
+  transform: rotate(45deg); /* Rotate icon when active */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .faq {
+    flex: 0 1 calc(100% - 1rem);
+  }
+}

@@ -1,0 +1,160 @@
+:root {
+  --primary-color: #007acc;
+  --secondary-color: #005fa3;
+  --background-color: #fff;
+  --text-color: #333;
+  --box-shadow-color: rgba(0, 0, 0, 0.2);
+  --border-color: #ccc;
+  --heading-font-size: 28px;
+  --section-margin-bottom: 20px;
+  --card-width: 250px;
+  --card-shadow-color: rgba(0, 0, 0, 0.1);
+  --progress-background-color: #e0e0e0;
+  --progress-bar-height: 10px;
+  --padding: 30px;
+  --border-radius: 10px;
+}
+
+.skills-wrapper {
+  width: 100%;
+  background-color: var(--background-color);
+  padding: var(--padding);
+  border-radius: var(--border-radius);
+  box-shadow: 0 8px 16px var(--box-shadow-color);
+  border: 1px solid var(--border-color);
+}
+
+h2 {
+  font-size: var(--heading-font-size);
+  color: var(--text-color);
+  margin-bottom: var(--section-margin-bottom);
+  text-align: center;
+}
+
+.skills-wrapper p {
+  font-size: var(--heading-font-size);
+  color: var(--text-color);
+  margin-bottom: var(--section-margin-bottom);
+  text-align: center;
+}
+
+.skills-section {
+  margin-bottom: var(--section-margin-bottom);
+  padding: 10px 0;
+  border-bottom: 2px solid var(--primary-color);
+  cursor: pointer;
+}
+
+.skills-section h3 {
+  font-size: 22px;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.skills-section i.fa-chevron-down {
+  margin-left: auto;
+  transition: transform 0.3s;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  display: none;
+}
+
+.skill {
+  width: 150px;
+  padding: 10px;
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  border-radius: 5px;
+  text-align: center;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.skill i {
+  font-size: 18px;
+}
+
+.skill:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+.skill.active {
+  background-color: var(--secondary-color);
+}
+
+.skills-showcase {
+  padding-top: 2rem;
+  text-align: center;
+}
+
+.skills-showcase h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem; /* Space between cards */
+}
+
+.skill-card {
+  background-color: var(--background-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px var(--card-shadow-color);
+  padding: 1.5rem;
+  width: var(--card-width); /* Fixed width for cards */
+  transition: transform 0.3s;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.skill-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.skill-header i {
+  font-size: 30px;
+  color: var(--primary-color); /* Icon color */
+  margin-right: 1rem;
+}
+
+.skill-progress {
+  background-color: var(--progress-background-color);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: var(--progress-bar-height); /* Height of the progress bar */
+  background-color: var(--primary-color);
+  transition: width 0.4s ease;
+}
+
+@media (max-width: 768px) {
+  .skill-card {
+    width: 100%; /* Full width on smaller screens */
+    max-width: 300px; /* Max width for large mobile screens */
+  }
+
+  .skills-showcase h2 {
+    font-size: 2rem; /* Smaller title on mobile */
+  }
+}

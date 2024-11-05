@@ -1,7 +1,7 @@
 /* Define Variables */
 :root {
   /* Colors */
-  --background-color: #1f2641;
+  --footer-background-color: #1f2641;
   --text-color: #333;
   --footer-text-color: #fff;
   --link-color: #ddd;
@@ -45,7 +45,7 @@ body {
 }
 
 .footer {
-  background-color: var(--background-color);
+  background-color: var(--footer-background-color);
   color: var(--footer-text-color);
   padding: var(--padding-body);
   font-size: var(--font-size-body);
