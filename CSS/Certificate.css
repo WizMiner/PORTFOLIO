@@ -1,0 +1,114 @@
+/* Set up the container */
+.certification-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  width: 100%;
+  perspective: 1500px; /* Add perspective for 3D depth */
+  padding: 20px;
+}
+
+/* Certification Card with 3D Effects */
+.certification-card {
+  background: #fff;
+  border-radius: 15px;
+  width: 280px;
+  padding: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); /* Soft shadow for 3D effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d; /* Enable 3D space for child elements */
+  transform: translateZ(
+    0
+  ); /* Set initial transform value for smooth hover effect */
+}
+
+.certification-card:hover {
+  transform: translateY(-10px) rotateY(5deg) rotateX(5deg); /* Apply rotation and translation for 3D hover effect */
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2); /* Darker shadow when hovered */
+}
+
+/* Image styling */
+.certification-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  transform: rotate(0deg); /* Initial rotation state */
+  transition: transform 0.3s ease;
+}
+
+.certification-card:hover img {
+  transform: scale(1.1) rotate(5deg); /* Image scale and rotate on hover */
+}
+/* 3D Effect for the Section Title */
+.section-title {
+  font-size: 3rem;
+  color: #333;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 2px; /* Add some spacing between letters */
+  text-transform: uppercase; /* Make text uppercase for a modern feel */
+  position: relative;
+  display: inline-block;
+  transition: transform 0.3s ease, color 0.3s ease;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1),
+    /* Subtle shadow for depth */ 4px 4px 10px rgba(0, 0, 0, 0.15),
+    /* Stronger shadow for more depth */ 6px 6px 15px rgba(0, 0, 0, 0.2); /* Maximum shadow for bold effect */
+}
+
+.section-title:hover {
+  transform: translateY(-10px) rotateX(10deg) rotateY(5deg); /* 3D movement on hover */
+  color: #3498db; /* Change color on hover */
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2), 8px 8px 20px rgba(0, 0, 0, 0.25),
+    12px 12px 30px rgba(0, 0, 0, 0.3); /* Stronger shadow when hovered */
+}
+
+/* Title and description */
+.certification-card h3 {
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.certification-card p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 15px;
+  transition: color 0.3s ease;
+}
+
+/* Button style */
+.certification-card .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  transform: translateZ(0); /* Keep button in 3D space */
+}
+
+.certification-card .btn:hover {
+  background-color: #2980b9;
+  transform: scale(1.1) translateY(-5px); /* Button hover with slight scale and move */
+}
+
+/* Responsive styling for different screen sizes */
+@media (max-width: 992px) {
+  .certification-card {
+    width: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .certification-card {
+    width: 100%;
+  }
+}
