@@ -1,4 +1,7 @@
-/* Hover Effects for Cards and Profile Image */
+
+// --- About.js ---
+
+// Hover Effects for Cards and Profile Image
 document.addEventListener("DOMContentLoaded", function () {
   const cards = document.querySelectorAll(".card");
   const profileImage = document.querySelector(".profile-img");
@@ -59,13 +62,13 @@ window.addEventListener("scroll", triggerBounceOnScroll);
 window.addEventListener("load", triggerBounceOnScroll);
 
 // Optional: Adding the scroll direction logic to manage scroll-up vs scroll-down
-let lastScrollTop = 0; // Variable to store last scroll position
+let lastScrollTopBounce = 0; // Variable to store last scroll position
 
 window.addEventListener("scroll", function () {
   const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
   // Check if the scroll direction is up or down
-  if (scrollTop > lastScrollTop) {
+  if (scrollTop > lastScrollTopBounce) {
     // Scrolling Down
     document.querySelectorAll(".bounce-left").forEach((el) => {
       el.classList.remove("bounce-left");
@@ -78,5 +81,5 @@ window.addEventListener("scroll", function () {
       el.classList.add("bounce-left"); // Add the bounce-left class
     });
   }
-  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Ensure it's not negative
+  lastScrollTopBounce = scrollTop <= 0 ? 0 : scrollTop; // Ensure it's not negative
 });

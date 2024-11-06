@@ -1,18 +1,17 @@
+/* Root Variables */
+:root {
+  --color-primary: #1a1f3d; /* Darker shade for navbar */
+  --color-secondary: #2e8dfd; /* Brighter blue for hover */
+  --color-light: #f3f4f6; /* Softer light color */
+  --shadow: rgba(0, 0, 0, 0.2);
+  --3d-depth: 6px;
+}
+
+/* Reset */
 * {
   margin: 0;
   padding: 0;
-  border: 0;
-  outline: 0;
-  text-decoration: none;
-  list-style: none;
-}
-
-/* Root Variables */
-:root {
-  --color-primary: #1f2641;
-  --color-secondary: #007bff;
-  --color-light: #fff;
-  --shadow: rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
 }
 
 /* Navbar */
@@ -31,12 +30,15 @@ nav {
   padding: 1rem;
 }
 
+/* 3D Text Effect */
 .tracking-in-contract-bck {
-  animation: tracking-in-contract-bck 1s cubic-bezier(0.215, 0.61, 0.355, 1) 2s
+  animation: tracking-in-contract-bck 1s cubic-bezier(0.215, 0.61, 0.355, 1)
     infinite;
   color: var(--color-light);
   font-weight: bold;
   text-transform: uppercase;
+  text-shadow: var(--3d-depth) var(--3d-depth) 8px var(--shadow);
+  transform: translateZ(var(--3d-depth));
 }
 
 /* Animation */
@@ -73,12 +75,27 @@ nav {
   color: var(--color-light);
   padding: 0.5rem 1rem;
   border-radius: 4px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s;
+  box-shadow: var(--3d-depth) var(--3d-depth) var(--shadow);
+  transform: translateY(-2px); /* Initial lift */
+  text-decoration: none; /* Remove underline */
 }
 
 .nav_menu a:hover {
   background-color: var(--color-secondary);
   color: var(--color-light);
+  transform: translateY(-4px); /* Lift effect */
+  box-shadow: var(--3d-depth) var(--3d-depth) var(--shadow);
+}
+
+/* Icon Styling */
+.nav_menu a i {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav_menu a:hover i {
+  transform: translateY(-4px); /* Lift icon */
+  box-shadow: var(--3d-depth) var(--3d-depth) var(--shadow); /* Add shadow for icon */
 }
 
 /* Toggle Button for Mobile */
@@ -87,9 +104,13 @@ nav {
   background: none;
   border: none;
   cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-/* Toggle Icon Style */
+#toggle-menu:hover {
+  transform: translateY(-4px); /* Adds lift on hover */
+}
+
 #menu-icon {
   width: 25px;
   filter: brightness(0) invert(1); /* Set icon color to white */
@@ -102,7 +123,6 @@ nav {
 }
 
 /* Mobile Styles */
-/* Mobile Styles */
 @media (max-width: 768px) {
   .nav_menu {
     display: none;
@@ -111,7 +131,7 @@ nav {
     background-color: var(
       --color-primary
     ); /* Dark background color for mobile menu */
-    color: #ffffff; /* Text color set to white for better contrast */
+    color: var(--color-light); /* Text color set to white for better contrast */
     position: absolute;
     top: 100%;
     left: 0;
@@ -128,18 +148,28 @@ nav {
   .nav_menu a {
     display: flex;
     align-items: center;
-    justify-content: center; /* Center text horizontally */
-    gap: 0.5rem;
+    justify-content: center;
     font-weight: 600;
     color: var(--color-light);
     padding: 0.5rem 1rem;
     border-radius: 4px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    text-decoration: none; /* Remove underline */
+    box-shadow: var(--3d-depth) var(--3d-depth) var(--shadow);
+    transform: translateY(-2px); /* Initial lift for 3D effect */
   }
 
   .nav_menu a:hover {
-    background-color: #007bff; /* Hover background for better visibility */
-    color: #ffffff;
+    background-color: var(
+      --color-secondary
+    ); /* Hover background for better visibility */
+    color: var(--color-light);
+    transform: translateY(-4px); /* Increased lift on hover */
+  }
+
+  /* Hover 3D effect for icons */
+  .nav_menu a:hover i {
+    transform: translateY(-4px); /* Lift effect on icons */
+    box-shadow: var(--3d-depth) var(--3d-depth) var(--shadow); /* Add shadow for icon */
   }
 
   #toggle-menu {

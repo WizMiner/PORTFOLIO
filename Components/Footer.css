@@ -29,6 +29,8 @@
 
   /* Transition */
   --transition-ease: 0.3s ease;
+  --transition-transform: 0.4s ease-out;
+  --transition-shadow: 0.3s ease-in-out;
 }
 
 /* General Reset */
@@ -49,6 +51,8 @@ body {
   color: var(--footer-text-color);
   padding: var(--padding-body);
   font-size: var(--font-size-body);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Add a subtle shadow */
+  border-radius: 12px;
 }
 
 .footer-container {
@@ -62,11 +66,14 @@ body {
   flex: 1 1 200px;
   min-width: 250px;
   text-align: center;
-  transition: transform var(--transition-ease);
+  transition: transform var(--transition-ease),
+    box-shadow var(--transition-shadow);
+  border-radius: 8px; /* Add border-radius for soft corners */
 }
 
 .footer-section:hover {
-  transform: scale(1.03);
+  transform: translateY(-5px) scale(1.05); /* Hover effect for 3D feel */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Shadow for depth */
 }
 
 .footer-section h2 {
@@ -107,7 +114,7 @@ body {
   padding: var(--padding-footer-link);
   border-radius: var(--border-radius);
   transition: background-color var(--transition-ease),
-    color var(--transition-ease);
+    color var(--transition-ease), transform var(--transition-ease);
 }
 
 .footer-section ul li a i {
@@ -120,6 +127,7 @@ body {
 .footer-section ul li a:focus {
   background-color: var(--link-hover-bg);
   color: var(--footer-text-color);
+  transform: translateX(5px); /* Hover effect on links */
 }
 
 .footer-bottom {
@@ -143,11 +151,64 @@ body {
   bottom: 2rem;
   right: 2rem;
   display: none;
-  transition: opacity var(--transition-ease);
+  transition: opacity var(--transition-ease), transform var(--transition-ease);
 }
 
 #scrollTopBtn:hover {
   background-color: var(--icon-hover-bg);
+  transform: translateY(-3px); /* Hover effect for scroll button */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .footer-section {
+    text-align: center;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    transition: background-color var(--transition-ease);
+  }
+
+  .footer-section:active,
+  .footer-section:focus {
+    background-color: var(--link-hover-bg);
+  }
+
+  .footer-section h2 {
+    font-size: calc(var(--font-size-footer-title) - 0.1rem);
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-section ul li a {
+    justify-content: center;
+    padding: 0.5rem;
+    border-radius: var(--border-radius);
+  }
+
+  .footer-bottom {
+    padding: 1rem;
+    font-size: var(--font-size-small);
+  }
+}
+
+/* 3D Effect on Icon Hover */
+.footer-section ul li a i:hover {
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Footer Section Link Hover Effects */
+.footer-section ul li a:hover,
+.footer-section ul li a:active,
+.footer-section ul li a:focus {
+  background-color: var(--link-hover-bg);
+  color: var(--footer-text-color);
 }
 
 /* Responsive */
