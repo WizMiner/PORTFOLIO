@@ -1,106 +1,158 @@
-/* Set up the container */
+:root {
+  --container-gap: 20px;
+  --perspective-depth: 1500px;
+  --card-bg-color: #fff;
+  --card-radius: 15px;
+  --card-width: 280px;
+  --card-padding: 20px;
+  --card-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  --card-hover-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+  --img-radius: 8px;
+  --img-hover-scale: 1.1;
+  --img-hover-rotate: 5deg;
+  --title-font-size: 3rem;
+  --title-color: #333;
+  --title-hover-color: #3498db;
+  --title-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1),
+    4px 4px 10px rgba(0, 0, 0, 0.15), 6px 6px 15px rgba(0, 0, 0, 0.2);
+  --title-hover-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2),
+    8px 8px 20px rgba(0, 0, 0, 0.25), 12px 12px 30px rgba(0, 0, 0, 0.3);
+  --text-color: #333;
+  --text-bg-color: #f8f9fa;
+  --text-hover-bg-color: #e0e4e7;
+  --text-padding: 10px;
+  --text-radius: 8px;
+  --button-bg-color: #3498db;
+  --button-hover-bg-color: #2980b9;
+  --button-color: #fff;
+  --button-radius: 5px;
+  --transition-duration: 0.3s;
+}
+
 .certification-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: var(--container-gap);
   justify-content: center;
   width: 100%;
-  perspective: 1500px; /* Add perspective for 3D depth */
-  padding: 20px;
+  perspective: var(--perspective-depth);
+  padding: var(--container-gap);
 }
 
-/* Certification Card with 3D Effects */
 .certification-card {
-  background: #fff;
-  border-radius: 15px;
-  width: 280px;
-  padding: 20px;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); /* Soft shadow for 3D effect */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: var(--card-bg-color);
+  border-radius: var(--card-radius);
+  width: var(--card-width);
+  padding: var(--card-padding);
+  box-shadow: var(--card-shadow);
+  transition: transform var(--transition-duration) ease,
+    box-shadow var(--transition-duration) ease;
   text-align: center;
   position: relative;
   overflow: hidden;
-  transform-style: preserve-3d; /* Enable 3D space for child elements */
-  transform: translateZ(
-    0
-  ); /* Set initial transform value for smooth hover effect */
+  transform-style: preserve-3d;
+  transform: translateZ(0);
 }
 
 .certification-card:hover {
-  transform: translateY(-10px) rotateY(5deg) rotateX(5deg); /* Apply rotation and translation for 3D hover effect */
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2); /* Darker shadow when hovered */
+  transform: translateY(-10px) rotateY(5deg) rotateX(5deg);
+  box-shadow: var(--card-hover-shadow);
 }
 
-/* Image styling */
 .certification-card img {
   width: 100%;
   height: auto;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  transform: rotate(0deg); /* Initial rotation state */
-  transition: transform 0.3s ease;
+  border-radius: var(--img-radius);
+  margin-bottom: var(--container-gap);
+  transform: rotate(0deg);
+  transition: transform var(--transition-duration) ease;
 }
 
 .certification-card:hover img {
-  transform: scale(1.1) rotate(5deg); /* Image scale and rotate on hover */
+  transform: scale(var(--img-hover-scale)) rotate(var(--img-hover-rotate));
 }
-/* 3D Effect for the Section Title */
+
 .section-title {
-  font-size: 3rem;
-  color: #333;
+  font-size: var(--title-font-size);
+  color: var(--title-color);
   font-weight: bold;
   text-align: center;
-  letter-spacing: 2px; /* Add some spacing between letters */
-  text-transform: uppercase; /* Make text uppercase for a modern feel */
+  letter-spacing: 2px;
+  text-transform: uppercase;
   position: relative;
   display: inline-block;
-  transition: transform 0.3s ease, color 0.3s ease;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1),
-    /* Subtle shadow for depth */ 4px 4px 10px rgba(0, 0, 0, 0.15),
-    /* Stronger shadow for more depth */ 6px 6px 15px rgba(0, 0, 0, 0.2); /* Maximum shadow for bold effect */
+  transition: transform var(--transition-duration) ease,
+    color var(--transition-duration) ease;
+  text-shadow: var(--title-shadow);
 }
 
 .section-title:hover {
-  transform: translateY(-10px) rotateX(10deg) rotateY(5deg); /* 3D movement on hover */
-  color: #3498db; /* Change color on hover */
-  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2), 8px 8px 20px rgba(0, 0, 0, 0.25),
-    12px 12px 30px rgba(0, 0, 0, 0.3); /* Stronger shadow when hovered */
+  transform: translateY(-10px) rotateX(10deg) rotateY(5deg);
+  color: var(--title-hover-color);
+  text-shadow: var(--title-hover-shadow);
 }
 
-/* Title and description */
 .certification-card h3 {
   font-size: 1.4rem;
-  color: #333;
-  margin-bottom: 10px;
+  color: var(--text-color);
   font-weight: bold;
+  margin-bottom: 15px;
+  transition: color var(--transition-duration) ease,
+    background-color var(--transition-duration) ease;
+  min-height: 90px;
+  overflow-y: auto;
+  padding: var(--text-padding);
+  background-color: var(--text-bg-color);
+  border-radius: var(--text-radius);
+}
+
+.certification-card h3:hover {
+  color: var(--title-hover-color);
+  box-shadow: 0 0 8px rgba(52, 152, 219, 0.8), 0 0 15px rgba(52, 152, 219, 0.6);
 }
 
 .certification-card p {
   font-size: 1rem;
-  color: #666;
+  color: #333;
   margin-bottom: 15px;
-  transition: color 0.3s ease;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border: 1px solid #1d9af2;
+  border-radius: 4px;
+  cursor: pointer;
+  max-height: 90px; /* Limit height for hidden text effect */
+  overflow: hidden;
+  box-shadow: 0 0 8px rgba(50, 50, 50, 0.8), 0 0 15px rgba(20, 20, 20, 0.6); /* Dark gray shadow */
+  transition: all 0.3s ease-in-out; /* Combined transition for simplicity */
 }
 
-/* Button style */
+.certification-card p:hover {
+  font-size: 1.2rem;
+  background-color: #e0e4e7;
+  transform: scale(1.05); /* Slight zoom out on hover */
+  max-height: 1000px; /* Large max-height to reveal hidden text */
+  box-shadow: 0 0 12px rgba(50, 50, 50, 0.9), 0 0 25px rgba(20, 20, 20, 0.7),
+    0 0 35px rgba(10, 10, 10, 0.5); /* Darker gray glow on hover */
+}
+
 .certification-card .btn {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #3498db;
-  color: #fff;
-  border-radius: 5px;
+  background-color: var(--button-bg-color);
+  color: var(--button-color);
+  border-radius: var(--button-radius);
   text-decoration: none;
   font-size: 1rem;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  transform: translateZ(0); /* Keep button in 3D space */
+  transition: background-color var(--transition-duration) ease,
+    transform var(--transition-duration) ease;
+  transform: translateZ(0);
 }
 
 .certification-card .btn:hover {
-  background-color: #2980b9;
-  transform: scale(1.1) translateY(-5px); /* Button hover with slight scale and move */
+  background-color: var(--button-hover-bg-color);
+  transform: scale(1.1) translateY(-5px);
 }
 
-/* Responsive styling for different screen sizes */
 @media (max-width: 992px) {
   .certification-card {
     width: 45%;
