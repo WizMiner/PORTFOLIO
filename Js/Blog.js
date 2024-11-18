@@ -4,7 +4,7 @@ const blogData = [
     title: "The Importance of Learning JavaScript",
     description:
       "JavaScript is an essential language for web development, enabling interactive features on websites.",
-    image: "Asset/Project/Jobportal.gif",
+    image: "Asset/Project/iphone.gif",
     link: "#",
   },
   {
@@ -12,6 +12,13 @@ const blogData = [
     description:
       "Learn the best practices for creating responsive, user-friendly websites.",
       image: "Asset/Project/Woox.gif",
+    link: "#",
+  },
+  {
+    title: "The Importance of Learning JavaScript",
+    description:
+      "JavaScript is an essential language for web development, enabling interactive features on websites.",
+    image: "Asset/Project/Jobportal.gif",
     link: "#",
   },
   {
