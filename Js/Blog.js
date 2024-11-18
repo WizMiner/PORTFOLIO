@@ -11,7 +11,7 @@ const blogData = [
     title: "Responsive Design Tips",
     description:
       "Learn the best practices for creating responsive, user-friendly websites.",
-      image: "Asset/Project/Jobportal.gif",
+      image: "Asset/Project/Woox.gif",
     link: "#",
   },
   {
