@@ -11,14 +11,14 @@ const blogData = [
     title: "Responsive Design Tips",
     description:
       "Learn the best practices for creating responsive, user-friendly websites.",
-      image: "Asset/Project/Jobportal.gif",
+      image: "Asset/Project/Woox.gif",
     link: "#",
   },
   {
     title: "Understanding CSS Grid",
     description:
       "CSS Grid is a powerful layout tool that makes designing web pages easier and more flexible.",
-      image: "Asset/Project/Jobportal.gif",
+      image: "Asset/Project/E-commerce.gif",
     link: "#",
   }
   // Add more blog data as needed
